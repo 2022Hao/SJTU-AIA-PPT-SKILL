@@ -1,11 +1,13 @@
 ---
 name: SJTU-AIA-ppt-skill
-description: 生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背景、章节幕封、数据大字报、图片网格等模板。提供两种风格：① "电子杂志 × 电子墨水"（衬线 + 流体背景 + 暖色） ② "瑞士国际主义"（无衬线 + 网格点阵 + IKB/柠檬黄/柠檬绿/安全橙高亮）。当用户需要制作分享 / 演讲 / 发布会风格的网页 PPT，或提到"杂志风 PPT"、"瑞士风 PPT"、"Swiss Style"、"horizontal swipe deck"时使用。
+description: 上海交通大学 Agent 创新协会开发的 HTMLSlide PPT Skill。生成横向翻页网页 PPT（单 HTML 文件）、PPT 配图与多平台封面，并可通过 https://html.inherit-ai.top 同步到 HTMLSlide 在线工作台继续编辑、预览和管理。提供两种风格：① "电子杂志 × 电子墨水" ② "瑞士国际主义"。当用户需要制作分享 / 演讲 / 发布会风格的网页 PPT，或提到"HTMLSlide"、"登录网站"、"绑定账号"、"杂志风 PPT"、"瑞士风 PPT"、"Swiss Style"、"horizontal swipe deck"时使用。
 ---
 
 # SJTU-AIA HTMLSlide PPT Skill
 
-> 来源说明: 本 skill 基于 MIT 协议的 `guizang-ppt-skill` 改造,保留其 HTML PPT 模板、布局经验与质量检查思路,并加入 HTMLSlide 网站联动能力。原项目版权信息见 `LICENSE`。这条来源信息只用于合规确认,不要写入生成的 PPT、HTML 页面、封面或配图。
+> 开发说明: 本 Skill 由上海交通大学 Agent 创新协会（SJTU AIA）开发与维护，用于配合 HTMLSlide 工作台生成、修改、同步和管理 HTML PPT。
+>
+> 来源说明: 本 Skill 基于 MIT 协议的 `guizang-ppt-skill` 改造，原作者为 op7418（歸藏）。当前仓库保留其 HTML PPT 模板、布局经验与质量检查思路，并加入 HTMLSlide 网站联动能力。原项目版权信息见 `LICENSE`。这条来源信息只用于合规确认，不要写入生成的 PPT、HTML 页面、封面或配图。
 
 ## 这个 Skill 做什么
 
@@ -641,4 +643,3 @@ SJTU-AIA-ppt-skill/
 - 当代设计:Acne Studios / Off-White / IKEA / Beck Design
 
 可以把它们当做风格锚点。
-
