@@ -20,36 +20,33 @@
 - **HTMLSlide 网站**: [https://html.inherit-ai.top](https://html.inherit-ai.top) 是在线编辑与项目管理工作台，让你像编辑 PPT 一样修改 AI 生成的 HTML 演示、即时预览、继续打包或分享。
 - **两者关系**: Skill 负责让 AI 在本地生成和维护 HTML；HTMLSlide 负责让人类在网页里低门槛编辑、预览和管理。Agent 登录绑定后，可以把本地 `index.html` 推送到网站，也可以从网站拉取已有项目继续修改。
 
-内测邀请码：`SJTUAgent`。先在 HTMLSlide 网站登录 / 注册并确认可进入工作台，再让本地 Agent 绑定账号。
+内测邀请码：`SJTUAgent`。先在 HTMLSlide 网站登录 / 注册并确认可进入工作台，再让你的 AI 助手绑定账号。
 
-## 第一次使用：先登录 HTMLSlide
+## 第一次使用：把链接发给 AI 助手，然后说“登录”
 
-如果你要让 AI 助手管理网站里的 HTML PPT，先在本机运行：
+普通用户不需要自己在终端敲命令。把本仓库链接或网站里的 Skill 下载链接发给你的 **Claude Code / Codex / WorkBuddy / Hemers / OpenClaw** 等 AI 编程助手，然后在对话框里说：
 
-```bash
-node scripts/sync-htmlslide.mjs status
+```text
+https://github.com/2022Hao/SJTU-AIA-PPT-SKILL
 ```
 
-如果显示 `Logged in: no`，继续运行：
-
-```bash
-node scripts/sync-htmlslide.mjs login --start-only
+```text
+请使用这个 HTMLSlide PPT Skill，并登录 HTMLSlide。
 ```
 
-脚本会输出一个授权链接和授权码。打开链接，在 [HTMLSlide](https://html.inherit-ai.top) 已登录状态下确认授权，然后回到终端运行：
+AI 助手会自动检查登录状态，并把 HTMLSlide 授权链接发给你。你只需要：
 
-```bash
-node scripts/sync-htmlslide.mjs login --finish
-node scripts/sync-htmlslide.mjs list
-```
+1. 打开 AI 助手给你的授权链接
+2. 在 [HTMLSlide](https://html.inherit-ai.top) 已登录状态下确认授权
+3. 回到对话框告诉 AI 助手“已确认”
 
-看到 `HTMLSlide agent login complete`，并且 `list` 能列出项目，就说明本地 Agent 已经绑定成功。
+绑定成功后，AI 助手就可以帮你新建、读取、修改并同步网站里的 HTML PPT。
 
 ## 鸣谢与来源
 
-特别鸣谢上海交通大学 Agent 创新协会干事开发者：钱灏宇、李济俊、陆李昕、杨文杰。
+本项目基于 MIT 协议的 `guizang-ppt-skill` 改造，原作者为 **op7418（歸藏）**。原始版权声明见 [`LICENSE`](./LICENSE)。
 
-本项目基于 MIT 协议的 `guizang-ppt-skill` 改造，原作者为 **op7418（歸藏）**。当前仓库在此基础上增加了 SJTU AIA / HTMLSlide 工作流、同步脚本、瑞士风主题和相关文档。原始版权声明见 [`LICENSE`](./LICENSE)。
+当前仓库在原项目基础上增加了 SJTU AIA / HTMLSlide 工作流、同步脚本、瑞士风主题和相关文档。特别鸣谢上海交通大学 Agent 创新协会干事开发者：钱灏宇、李济俊、陆李昕、杨文杰。
 
 > 让演示创作回归 AI，让修改编辑回归你。
 
@@ -184,16 +181,9 @@ node scripts/validate-swiss-deck.mjs path/to/index.html
 
 HTMLSlide 网站地址是 `https://html.inherit-ai.top/`。它不是另一个模板仓库，而是本 Skill 的在线工作台：用户在网页里登录后，可以继续编辑、预览和管理 AI 生成的 HTML PPT；本地 Agent 通过 `scripts/sync-htmlslide.mjs` 与网站项目同步。
 
-首次使用建议走“先登录，再同步”的流程：
+首次使用时，把本仓库链接 `https://github.com/2022Hao/SJTU-AIA-PPT-SKILL` 或网站里的 Skill 下载链接发给你的 Claude Code / Codex / WorkBuddy / Hemers / OpenClaw 等 AI 编程助手，然后在对话框里说“登录 HTMLSlide”。AI 助手会生成授权链接，你在网页里确认授权后，它就能继续同步和管理网站项目。
 
-```bash
-node scripts/sync-htmlslide.mjs status
-node scripts/sync-htmlslide.mjs login --start-only
-node scripts/sync-htmlslide.mjs login --finish
-node scripts/sync-htmlslide.mjs list
-```
-
-如果用户访问的 HTMLSlide 网站是 `https://html.inherit-ai.top/`,也可以显式指定站点:
+如果你是开发者或正在调试底层脚本，也可以显式指定站点:
 
 ```bash
 node scripts/sync-htmlslide.mjs login \
